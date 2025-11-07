@@ -1,0 +1,40 @@
+.photo{
+    clear: both;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    color: aliceblue;
+}
+img{
+    display: block;
+    width: 100%;
+}
+.div_2{
+    width: 300px;
+    height: auto;
+    text-align: center;
+    margin-left: 28px;
+    margin-top: 15px;
+}
+
+   
+i{
+    margin:10px ;
+    color: aliceblue;
+}
+.loading{
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    width: 200px;
+    height: 200px;
+    border-top:8px solid  white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    overflow: hidden;
+}
+@keyframes spin {
+    0% {transform: rotate(0deg);}
+    100%{transform: rotate(360deg);}
+}
+

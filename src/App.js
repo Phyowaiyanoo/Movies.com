@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Nav from './Components/Nav'
+import Home from './Components/Home'
+import { Route, Routes } from 'react-router'
+import About from './Components/About'
+import Details from './Components/Details'
+import NotFoundPage from './Components/NotFoundPage'
+import Register from './Components/Register'
+import Video from './Components/Video'
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav/>
+      
+     
+
+      <Routes>
+        <Route path = "/" element={<Home/>}/>
+        <Route path ="/About" element={<About/>}/>
+        <Route path = "/Details/:id" element={<Details/>}/>
+        <Route path='/register' element={<Register/>}/>
+        <Route path='/Video/:id' element={<Video/>}/>
+        <Route path = "*" element={<NotFoundPage/>}/>
+      </Routes>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
