@@ -1,28 +1,28 @@
+import { Actiontype } from "../type"
 
-import { Actiontype } from "../Action-type"
 
-export const  fetchMovies= (movies) => {
+export const fetchMovie = (movies) => {
+    
     return {
-        type :Actiontype.FETCH_MOVIES ,
+        type : Actiontype.Fetch_Movie,
         payload : movies
     }
 }
-export const  selectMovie = (movie) => {
+export const selectMovie = (movie) => {
     return {
-        type :Actiontype.SELECT_MOVIE ,
+        type : Actiontype.Select_Movie,
         payload : movie
     }
 }
-export const removeMovie = (movie)=>{
+export const video = (video) => {
     return {
-        type : "removeMovie",
-        payload : movie
+        type : Actiontype.video,
+        payload : video
     }
 }
-
-export const Movie = (movie)=>{
+export const removeMovie = (movie) => {
     return {
-        type : "playing movie",
-        payload:movie
+        type : Actiontype.remove,
+        payload : movie
     }
 }
