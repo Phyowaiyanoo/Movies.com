@@ -1,28 +1,26 @@
 import React from 'react'
-import Nav from './Components/Nav'
-import Home from './Components/Home'
-import { Route, Routes } from 'react-router'
-import About from './Components/About'
-import Details from './Components/Details'
-import NotFoundPage from './Components/NotFoundPage'
-import Register from './Components/Register'
-import Video from './Components/Video'
-
-
+import Home from './Component/Home'
+import Nav from './Component/Nav'
+import About from './Component/About'
+import Register from './Component/Register'
+import Notfound from './Component/Notfound'
+import Video from "./Component/Video"
+import { Route, Routes } from 'react-router-dom'
+import Details from './Component/Details'
+import "./App.css"
 const App = () => {
   return (
     <div>
+      <h1><span>Movies.com</span></h1>
       <Nav/>
       
-     
-
       <Routes>
-        <Route path = "/" element={<Home/>}/>
-        <Route path ="/About" element={<About/>}/>
-        <Route path = "/Details/:id" element={<Details/>}/>
-        <Route path='/register' element={<Register/>}/>
-        <Route path='/Video/:id' element={<Video/>}/>
-        <Route path = "*" element={<NotFoundPage/>}/>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/About' element={<About/>}/>
+        <Route path='/Register' element={<Register/>}/>
+        <Route path='/Details/:id'element={<Details/>}/>
+        <Route path= '/Video/:id' element={<Video/>}/>
+        <Route path='*' element={<Notfound/>}/>
       </Routes>
     </div>
   )
