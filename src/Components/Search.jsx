@@ -1,25 +1,37 @@
-import React, { useState } from 'react'
-import "../CSS/Search.css"
-import { api, api_key } from "../Api/index.js"
+/* eslint-disable no-const-assign */
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react'
+import { api, api_key } from '../Api/Axios'
 import { useDispatch } from 'react-redux'
-import { fetchMovies } from '../Redux/Action/Movies/index.js'
+import { fetchMovie } from '../Redux/Action/Movies'
+
+
 const Search = () => {
-    const dispatch = useDispatch();
-    const [movie, setmovie] = useState('');
+    
+    
+    const [movie, setMovie] = useState('')
+    
+    const dispatch = useDispatch()
     const searchMovie = async () => {
         if (movie !== '') {
-            const res = await api.get(`/search/movie?query=${movie}&api_key=${api_key}`);
-            dispatch(fetchMovies(res.data.results));
+            const res = await api.get(`/search/movie?query=${movie}&api_key=${api_key}`)
+            dispatch(fetchMovie(res.data.results))
+        
+            
         } else {
-            const res = await api.get(`/movie/now_playing?api_key=${api_key}`);
-            dispatch(fetchMovies(res.data.results));
+            const res = await api.get(`/movie/popular?api_key=${api_key}`)
+                    dispatch(fetchMovie(res.data.results));
         }
+     
+
     }
+    useEffect(() => {
+        searchMovie()
+    }, [])
     return (
         <div>
-            <div className='Search'>
-                <input type="text" placeholder='Search' value={movie} onChange={(e) => setmovie(e.target.value)} />
-                <button type="button" className='button' onClick={() => searchMovie()}>Search</button></div>
+            <input type="text" value={movie} placeholder='Search' onChange={(e) => setMovie(e.target.value)} style={{height:"50px",borderRadius:"9px",marginLeft:"15px",paddingLeft:"8px"}}/>
+            <button type='button' onClick={() => searchMovie()}> Search</button>
         </div>
     )
 }
