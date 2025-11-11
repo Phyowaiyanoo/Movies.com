@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Register = () => {
+const  LoginForm =()=> {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -8,17 +8,18 @@ const Register = () => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
-    alert("Login successful! ");
+    alert("Login successful!");
   };
 
   return (
     <div
       style={{
+        color:"black",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
         height: "80vh",
-        backgroundColor:"black",
+        backgroundColor: "#03060aff",
       }}
     >
       <form
@@ -41,6 +42,7 @@ const Register = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
             style={{
+               color:"black",
               width: "100%",
               padding: "10px",
               border: "1px solid #ccc",
@@ -58,6 +60,7 @@ const Register = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
             style={{
+              color:"black",
               width: "100%",
               padding: "10px",
               border: "1px solid #ccc",
@@ -73,7 +76,7 @@ const Register = () => {
             width: "100%",
             padding: "10px",
             backgroundColor: "#4f46e5",
-            color: "white",
+            color: "black",
             border: "none",
             borderRadius: "6px",
             cursor: "pointer",
@@ -86,4 +89,4 @@ const Register = () => {
   );
 }
 
-export default Register;
+export default LoginForm;
