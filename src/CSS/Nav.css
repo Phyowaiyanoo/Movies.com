@@ -1,26 +1,13 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: black;
-}
-
-.Nav{
+.nav{
     display: flex;
     justify-content: flex-end;
+    gap: 10px;
 }
 button{
-    padding: 10px;
-    margin:15px;
-    box-shadow:0 0 5px rgba(255, 255, 255, 0.959);
-    background: white;
+    background-color: red;
+    padding: 15px;
     border-radius: 10px;
-}
-h1{
+    box-shadow: 0 0 5px rgba(255,0,0, 0.9),0 0 8px rgba(255,0,0,1);
     color: aliceblue;
-    padding: 20px;
-    font-size: 30px;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.959);
+    margin: 15px;
 }
