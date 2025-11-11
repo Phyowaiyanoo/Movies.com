@@ -1,12 +1,12 @@
 import React from 'react'
-import "../CSS/NotFound.css"
-const NotFoundPage = () => {
+
+const Notfound = () => {
   return (
-    <div className='div'>
-    <p>404</p> 
-    <p>Page not found!!!!!</p> 
+    <div>
+      <h1>404</h1>
+      <h2>Not found page!!!!</h2>
     </div>
   )
 }
 
-export default NotFoundPage
+export default Notfound
