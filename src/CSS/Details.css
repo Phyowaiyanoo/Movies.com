@@ -13,8 +13,7 @@
 img{
     display: block;
 }
-.details h1 , h2 , p{
+.details h1 , .details h2 , .details p{
     margin-top: 15px;
     padding: 10px;
-    color: red;
 }
