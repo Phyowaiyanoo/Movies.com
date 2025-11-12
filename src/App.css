@@ -5,9 +5,8 @@
 }
 body{
     background-color: black;
-    color: aliceblue;
+    color: red;
 }
 span{
-    color: red;
     font-size: 60px;
 }
